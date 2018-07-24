@@ -1,0 +1,16 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.panel {
+}
+
+.row {
+}
+
+.main{
+  padding:1rem 0 0 0;
+}
