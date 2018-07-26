@@ -11,12 +11,16 @@ let columns = [
     {
       Header: "News",
       accessor: "news_title", // String-based value accessors!
-      width: 400
+      width: 350,
+      style: {"white-space": "pre-line",
+        "word-wrap": "break-word",
+      "text-align" :"left"}
     },
     {
       Header: "Sentiment",
       accessor: "sentiment",
-      Cell: row => (
+      Cell: row => {
+        return (
         <div
           style={{
             width: "100%",
@@ -30,15 +34,15 @@ let columns = [
               width: `100%`,
               height: "100%",
               backgroundColor:
-                row.sentiment === "negative"
+                row.value === "negative"
                   ? "#85cc00"
-                  : row.sentiment === "positive" ? "#ff2e00" : "#ffbf00",
+                  : row.value === "positive" ? "#ff2e00" : "#ffbf00",
               borderRadius: "2px",
               transition: "all .2s ease-out"
             }}
           />
         </div>
-      )
+      )}
     }
   ];
 
@@ -55,7 +59,7 @@ export class News extends React.Component {
 
   fetchData(){
     let currentComponent = this;
-    axios.get('http://127.0.0.1:32321/getNews/200')
+    axios.get('http://127.0.0.1:32321/getNews/100')
     .then(function (response) {
       console.log(response);
       currentComponent.setState((state, props) => {
@@ -77,6 +81,8 @@ export class News extends React.Component {
           columns={columns}
           defaultPageSize={8}
           showPageSizeOptions={false}
+          showPaginationTop = {true}
+          showPaginationBottom = {false}
         />
       </div>
     );
