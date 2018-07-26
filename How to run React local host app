@@ -1,0 +1,13 @@
+Using command promt to:
+
+git clone or download zip 
+
+cd "pec-ten" folder 
+
+npm install >> download node modules 
+
+npm start >> the app will be initialised at "localhost:3000"
+
+npm run build >> all new changes will be compiled >> the app will be refreshed and updated 
+
+**Note: Ctrl+C to abort current commands
